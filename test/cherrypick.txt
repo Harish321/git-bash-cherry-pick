@@ -1,0 +1,12 @@
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You are currently cherry-picking commit 6ea6786.
+
+Untracked files:
+	cherrypick.txt
+	file1.txt
+	file2.txt
+	script.sh
+
+nothing added to commit but untracked files present
