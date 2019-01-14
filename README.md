@@ -1,5 +1,5 @@
 # git-bash-cherry-pick
-A bash and python script for automatic cherry-pick of multiple commands from one branch to another branch..
+A bash and python script for automatic cherry-pick of multiple commits from one branch to another branch..
 
 
 # Completed
