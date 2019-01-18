@@ -1,0 +1,4 @@
+error: could not apply dea56dd... changed in testing branch
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
