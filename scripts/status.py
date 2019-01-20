@@ -3,7 +3,6 @@ import sys
 status = ""
 args = sys.argv
 inputFileName = args[1]
-outputFileName = args[2]
 with open(inputFileName) as f:
     for line in f:
     	if "commit" in line:
