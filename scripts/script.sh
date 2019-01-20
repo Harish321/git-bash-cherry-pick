@@ -32,18 +32,18 @@ else
 fi
 fileName = $dataPath/listOfCherryPick.txt
 countFileName = $dataPath/count.txt
-
+getlog()
 # get the from env, to env
 
 # get the log of from env
 function getlog() {
     cd $masterBranchPath
-    git log > $logPath/temp.log
+    git log > $logPath/gitLog.txt
     findNewLogs()
 }
 
 function findNewLogs() {
-    python $scriptPath/prepareCherryPickList.py
+    python $scriptPath/prepareCherryPickList.py "$dataPath/count.txt" "$logPath/gitLog.txt" > $fileName
     timeToCherryPick()
 }
 function timeToCherryPick() {
@@ -54,15 +54,15 @@ function timeToCherryPick() {
         while IFS='' read -r line || [[ -n "$line" ]]; do
             applyCherryPick($line)
         done < "$fileName"
-        updateList($count)
+        newUpdateList($count)
     else 
     fi
 }
 function applyCherryPick(commit) {
     cd $clientBranchPath
-    git cherry-pick $commit > $logPath/tempCherryPickStatus.txt
-    status = "$(python $scriptPath/status.py)"    
-    if [ $status = 'true']; then
+    git cherry-pick $commit 2>&1 | tee $logPath/tempCherryPickStatus.txt
+    status = "$(python $scriptPath/status.py $logPath/tempCherryPickStatus.txt)"    
+    if [ $status = 'True']; then
         $count = $count + 1
     else
         code $branchPath
@@ -76,13 +76,16 @@ function applyCherryPick(commit) {
                 git cherry-pick --abort
                 echo "Success fully applied $count Cherry Picks..."
                 echo "Aborting..."
-                updateList($count)
+                newUpdateList($count)
                 exit 1
             fi
+            break
         done < /dev/stdin
     fi
 }
-
+function newUpdateList(n) {
+    python $scriptPath/count.py $dataPath/count.txt $n 
+}
 function updateList(n) {
     while IFS='' read -r line || [[ -n "$line" ]]; do
         number = expr $line + $count + 0
