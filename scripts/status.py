@@ -1,14 +1,14 @@
 import sys
 
 status = ""
-with open("status.txt") as f:
+args = sys.argv
+inputFileName = args[1]
+outputFileName = args[2]
+with open(inputFileName) as f:
     for line in f:
     	if "commit" in line:
-    		status = "False"
+    		print "False"
     		break
     	if "insertion" in line:
-    		status = "True"
+    		print "True"
     		break
-   	file=open("output.txt",w+")
-    file.write(status)
-    file.close()
