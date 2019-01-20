@@ -6,7 +6,10 @@ Fcount = 0
 count = 0
 substr = "<kgfs-sit>"
 
-with open('count.txt') as b:
+args = sys.argv
+countFileName = args[1]
+gitLogFileName = args[2]
+with open(countFileName) as b:
     for line in b:
         line = line.split("\n")
         if (line[0] == "\n" or line[0] == ""):
@@ -29,7 +32,7 @@ def findByMsg(msg,substr):
         if boolean == True:
             print substr
 
-with open('temp.txt') as b:
+with open(gitLogFileName) as b:
     for line in b:
         line = line.split("\n")
         if (line[0] == "\n" or line[0] == ""):
