@@ -1,4 +1,4 @@
-error: could not apply c880ab2... <kgfs-sit> commit5
+error: could not apply e776a2c... <kgfs-sit> addede new change
 hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
