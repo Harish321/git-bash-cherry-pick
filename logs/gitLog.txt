@@ -1,0 +1,127 @@
+commit c880ab25b7673222baf8b62090e0084df6b3fc17
+Author: Harish <harish.d14@iiits.in>
+Date:   Sun Jan 20 11:47:04 2019 +0530
+
+    <kgfs-sit> commit5
+
+commit d389009e7a958b7d170a526dfd7243aa62fdb128
+Author: Harish <harish.d14@iiits.in>
+Date:   Sun Jan 20 11:46:52 2019 +0530
+
+    <kgfs-sit> commit 4
+
+commit a8d746afb76b74fac9e60847d735432564705dec
+Author: Harish <harish.d14@iiits.in>
+Date:   Sun Jan 20 11:46:40 2019 +0530
+
+    <kgfs-sit> commit3
+
+commit 1c0a6b1ff0a7b65f5afdc6e108749a4fb27e835e
+Author: Harish <harish.d14@iiits.in>
+Date:   Sun Jan 20 11:46:29 2019 +0530
+
+    <kgfs-sit> commit2
+
+commit a5352cf69bc99a37edf9d1329b3c876c670f274a
+Author: Harish <harish.d14@iiits.in>
+Date:   Sun Jan 20 11:46:09 2019 +0530
+
+    <kgfs-sit> commit1
+
+commit a4b174320f52ff6a6c3942dc81bede50afd55e98
+Author: Mahesh Dhulipalla <dhulipallamahesh02@gmail.com>
+Date:   Sat Jan 19 21:48:46 2019 +0530
+
+    count changes
+
+commit b913116cf37f23963a8f9725ae246f2d37af893f
+Author: Mahesh Dhulipalla <dhulipallamahesh02@gmail.com>
+Date:   Sat Jan 19 16:53:17 2019 +0530
+
+    added count functionality
+
+commit 9ae72ecf225bfd0a74e9b9b058dc5a5b24a8bb4c
+Author: Mahesh Dhulipalla <dhulipallamahesh02@gmail.com>
+Date:   Sat Jan 19 16:07:54 2019 +0530
+
+    changes
+
+commit 0e7a1e95d8d598119cbe747d89b3366c3aa28981
+Author: Maheshgh1 <36168651+Maheshgh1@users.noreply.github.com>
+Date:   Sat Jan 19 15:34:37 2019 +0530
+
+    my chanes
+    
+    mhfjy mhgmg
+
+commit 629e66e6449c5efd31cd48dee7d6d3e13641ca2b
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 10:43:45 2019 +0530
+
+    testing
+
+commit 941942587f40dbd3fd2e9e2abc4edf4a991e7b61
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 11:08:16 2019 +0530
+
+    testing
+
+commit bcff05490912e3a388932b0c2dedc73eaf40c73e
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 10:43:45 2019 +0530
+
+    changed in testing branch
+
+commit 7e19efb1325dcd0f8fd9e596f9c01844625ba060
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 11:06:05 2019 +0530
+
+    Added status.txt
+
+commit db6748f776ce573195b3be5a912faf4ddb8b0ec3
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 11:05:06 2019 +0530
+
+    testing
+
+commit fd84adff4567eb440e0cd33968a7e4a053ece459
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 11:01:34 2019 +0530
+
+    added status.txt
+
+commit 80e845c44f91ec6b0037170a32697a816fc6eb95
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 10:43:45 2019 +0530
+
+    changed in testing branch
+
+commit 27162c2cfd08a4d6aaee2b2a79cca785275a48ab
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 10:58:02 2019 +0530
+
+    Added git ignore
+
+commit a7125b655327aea715d64cb8a7e24d9051102086
+Author: Harish <harish.d14@iiits.in>
+Date:   Fri Jan 18 10:41:27 2019 +0530
+
+    Added scripts
+
+commit 469363de24b353de8c036be3586da30e45e7f07b
+Author: Harish Dhulipalla <harish.d14@iiits.in>
+Date:   Mon Jan 14 06:30:00 2019 +0530
+
+    typo fix
+
+commit fd6b0d34a3e4d8c9f96e859c15877ba83b17f22a
+Author: Harish Dhulipalla <harish.d14@iiits.in>
+Date:   Sat Jan 12 00:15:49 2019 +0530
+
+    Day -2 changes
+
+commit 6ea6786c703888c352557139523fb6e867a55507
+Author: Harish Dhulipalla <harish.d14@iiits.in>
+Date:   Sat Jan 12 00:15:49 2019 +0530
+
+    Initial commit
