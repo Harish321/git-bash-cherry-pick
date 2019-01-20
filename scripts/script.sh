@@ -10,14 +10,17 @@ f) from=${OPTARG};;
 t) to=${OPTARG};;
 esac
 done
+echo $from
+echo $to
 tempCount=0
+count=0
 array=()
 cd ..
 mainPath="$(pwd)"
 pathFileName="$mainPath/data/path.txt"
 while IFS='' read -r line || [[ -n "$line" ]]; do
     array[$tempCount]=$line
-    $tempCount = $tempCount+1
+    tempCount=$((tempCount+1))
 done < "$pathFileName"
 
 if [ $tempCount = 6 ]; then
@@ -30,79 +33,63 @@ if [ $tempCount = 6 ]; then
 else
     echo "All the paths are not set. Please run install.sh to set the path"
 fi
-fileName = $dataPath/listOfCherryPick.txt
-countFileName = $dataPath/count.txt
-getlog()
-# get the from env, to env
+fileName=$dataPath/listOfCherryPick.txt
+countFileName=$dataPath/count.txt
 
-# get the log of from env
 function getlog() {
     cd $masterBranchPath
     git log > $logPath/gitLog.txt
-    findNewLogs()
+    findNewLogs
 }
 
 function findNewLogs() {
     python $scriptPath/prepareCherryPickList.py "$dataPath/count.txt" "$logPath/gitLog.txt" > $fileName
-    timeToCherryPick()
+    timeToCherryPick
 }
 function timeToCherryPick() {
-    cd clientBranchPath
-    getBranch = $(git branch | grep \* | cut -d ' ' -f2)
+    cd $clientBranchPath
+    getBranch=$(git branch | grep \* | cut -d ' ' -f2)
     if [ $getBranch = $to ]; then
         git pull
         while IFS='' read -r line || [[ -n "$line" ]]; do
-            applyCherryPick($line)
+            echo $line
+            applyCherryPick $line
         done < "$fileName"
-        newUpdateList($count)
-    else 
+        newUpdateList $count
     fi
 }
-function applyCherryPick(commit) {
+function applyCherryPick() {
     cd $clientBranchPath
-    git cherry-pick $commit 2>&1 | tee $logPath/tempCherryPickStatus.txt
-    status = "$(python $scriptPath/status.py $logPath/tempCherryPickStatus.txt)"    
-    if [ $status = 'True']; then
-        $count = $count + 1
+    git cherry-pick $1 2>&1 | tee $logPath/tempCherryPickStatus.txt
+    status="$(python $scriptPath/status.py $logPath/tempCherryPickStatus.txt)"
+    echo $status
+    if [ $status == 'True' ]; then
+        count=$((count + 1))
     else
-        code $branchPath
-        echo "Please fix the conflicts and proceed (Fixed/Abort)"
-        while read choice; do
-            value = $choice
-            if [$choice = 'f']; then
-                $count = $count + 1
-                break
-            else
-                git cherry-pick --abort
-                echo "Success fully applied $count Cherry Picks..."
-                echo "Aborting..."
-                newUpdateList($count)
-                exit 1
-            fi
-            break
-        done < /dev/stdin
+        code .
+        echo "choice (f/a)"
+        read value </dev/tty
+        if [ $value == 'f' ]; then
+            count=$((count + 1))
+        else
+            git cherry-pick --abort
+            msg=$count
+            msg+=" Cherry Picks applied successfully"
+            echo $msg
+            newUpdateList $count
+            exit 1
+        fi
     fi
 }
-function newUpdateList(n) {
-    python $scriptPath/count.py $dataPath/count.txt $n 
+function newUpdateList() {
+    python $scriptPath/count.py $dataPath/count.txt $1
 }
-function updateList(n) {
+function updateList() {
     while IFS='' read -r line || [[ -n "$line" ]]; do
-        number = expr $line + $count + 0
+        number=expr $line + $count + 0
         echo $number > $countFileName
     done < "$countFileName"
     exit 1
 }
-# remove already applied logs
 
-# change branch
-
-# apply cherry-pick loop
-
-# error open code
-
-# wait for reolve or abort
-
-# if resolve add to the already list and push
-
-# if abort abort the cherry-pick and push
+getlog
