@@ -9,6 +9,8 @@ substr = "<kgfs-sit>"
 args = sys.argv
 countFileName = args[1]
 gitLogFileName = args[2]
+substr = args[3]
+substr = "<" + substr + ">"
 with open(countFileName) as b:
     for line in b:
         line = line.split("\n")
@@ -45,5 +47,5 @@ for code in substrList:
         # print substrList[count-2]
     count = count+1
 range1 = len(finalCommitArray)-int(Fcount)
-for x in range(range1,-1,-1):
+for x in range(range1-1,-1,-1):
     print finalCommitArray[x]
