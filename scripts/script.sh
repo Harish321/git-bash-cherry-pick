@@ -43,7 +43,7 @@ function getlog() {
 }
 
 function findNewLogs() {
-    python $scriptPath/prepareCherryPickList.py "$dataPath/count.txt" "$logPath/gitLog.txt" > $fileName
+    python $scriptPath/prepareCherryPickList.py "$dataPath/count.txt" "$logPath/gitLog.txt" "$from" > $fileName
     timeToCherryPick
 }
 function timeToCherryPick() {
