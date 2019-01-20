@@ -2,5 +2,5 @@
 /Users/Harish/personal/scripts/git-bash-cherry-pick/scripts
 /Users/Harish/personal/scripts/git-bash-cherry-pick/logs
 /Users/Harish/personal/scripts/git-bash-cherry-pick/data
-fsasf
-sadfsafd
+/Users/Harish/personal/scripts/git-bash-cherry-pick
+/Users/Harish/personal/scripts/branch/git-bash-cherry-pick
